@@ -9,7 +9,6 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // onAuthStateChange fires immediately with INITIAL_SESSION — no need for getSession()
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (_event, session) => {
         setSession(session)
@@ -21,7 +20,6 @@ export function AuthProvider({ children }) {
         }
       }
     )
-
     return () => subscription.unsubscribe()
   }, [])
 
@@ -34,11 +32,11 @@ export function AuthProvider({ children }) {
         .single()
 
       if (error && error.code === 'PGRST116') {
-        // Profile missing — create it now
+        // Profile missing — create it
         const { data: { user } } = await supabase.auth.getUser()
         const { data: created, error: createErr } = await supabase
           .from('profiles')
-          .upsert({ id: userId, phone: user?.phone ?? null }, { onConflict: 'id' })
+          .upsert({ id: userId, email: user?.email ?? null }, { onConflict: 'id' })
           .select('*')
           .single()
         if (createErr) console.error('Error creating profile:', createErr)
@@ -56,9 +54,7 @@ export function AuthProvider({ children }) {
   }
 
   async function refreshProfile() {
-    if (session?.user?.id) {
-      await fetchProfile(session.user.id)
-    }
+    if (session?.user?.id) await fetchProfile(session.user.id)
   }
 
   async function signOut() {
