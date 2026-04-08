@@ -9,14 +9,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-      if (session) fetchProfile(session.user.id)
-      else setLoading(false)
-    })
-
-    // Listen for auth changes
+    // onAuthStateChange fires immediately with INITIAL_SESSION — no need for getSession()
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (_event, session) => {
         setSession(session)
@@ -41,7 +34,7 @@ export function AuthProvider({ children }) {
         .single()
 
       if (error && error.code === 'PGRST116') {
-        // Profile missing — create it now (trigger may have failed)
+        // Profile missing — create it now
         const { data: { user } } = await supabase.auth.getUser()
         const { data: created, error: createErr } = await supabase
           .from('profiles')
