@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../contexts/AuthContext'
 
-// ── Scroll reveal ─────────────────────────────────────────────
+// ââ Scroll reveal âââââââââââââââââââââââââââââââââââââââââââââ
 function useVisible(threshold = 0.1) {
   const ref = useRef(null)
   const [vis, setVis] = useState(false)
@@ -18,7 +18,7 @@ function useVisible(threshold = 0.1) {
   return [ref, vis]
 }
 
-// ── Ticker ─────────────────────────────────────────────────────
+// ââ Ticker âââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const TICKS = [
   '"Pay up"', '"I told you so"', '"Official record"',
   '"No excuses"', '"Put money on it"', '"You owe me"',
@@ -40,7 +40,7 @@ function Ticker() {
   )
 }
 
-// ── Demo Bet Card ──────────────────────────────────────────────
+// ââ Demo Bet Card ââââââââââââââââââââââââââââââââââââââââââââââ
 function DemoBetCard() {
   return (
     <div style={{ background: '#1a1a1a', border: '1px solid #2a2a2a', borderRadius: 24, padding: 32, position: 'relative', overflow: 'hidden' }}>
@@ -49,7 +49,7 @@ function DemoBetCard() {
       {/* Parties */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#333', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>😤</div>
+          <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#333', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>ð¤</div>
           <div>
             <div style={{ fontWeight: 600, fontSize: 15 }}>You</div>
             <div style={{ color: '#c8ff00', fontSize: 11, fontFamily: "'DM Mono', monospace" }}>initiator</div>
@@ -57,7 +57,7 @@ function DemoBetCard() {
         </div>
         <div style={{ background: '#111', border: '1px solid #333', borderRadius: 100, padding: '6px 12px', fontFamily: "'Bebas Neue', sans-serif", fontSize: 18, letterSpacing: 2, color: '#888' }}>VS</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#333', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>🙄</div>
+          <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#333', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>ð</div>
           <div>
             <div style={{ fontWeight: 600, fontSize: 15 }}>Jordan</div>
           </div>
@@ -75,7 +75,7 @@ function DemoBetCard() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
         <div>
           <div style={{ fontSize: 11, color: '#888', fontFamily: "'DM Mono', monospace", marginBottom: 2 }}>ON THE LINE</div>
-          <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 32, letterSpacing: 1 }}>1 Round 🍺</div>
+          <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 32, letterSpacing: 1 }}>1 Round ðº</div>
         </div>
         <div style={{ background: 'rgba(200,255,0,0.1)', color: '#c8ff00', border: '1px solid rgba(200,255,0,0.3)', borderRadius: 100, padding: '6px 16px', fontSize: 12, fontFamily: "'DM Mono', monospace", display: 'flex', alignItems: 'center', gap: 6 }}>
           <div style={{ width: 6, height: 6, background: '#c8ff00', borderRadius: '50%', animation: 'pulse 1.5s infinite' }} />
@@ -86,30 +86,30 @@ function DemoBetCard() {
       {/* Buttons */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
         <div style={{ padding: 14, borderRadius: 14, border: '1px solid #333', background: '#111', color: '#f5f4f0', fontWeight: 600, fontSize: 14, textAlign: 'center' }}>Decline</div>
-        <div style={{ padding: 14, borderRadius: 14, background: '#c8ff00', color: '#0a0a0a', fontWeight: 700, fontSize: 14, textAlign: 'center' }}>Accept Bet ✓</div>
+        <div style={{ padding: 14, borderRadius: 14, background: '#c8ff00', color: '#0a0a0a', fontWeight: 700, fontSize: 14, textAlign: 'center' }}>Accept Bet â</div>
       </div>
     </div>
   )
 }
 
-// ── Use cases ──────────────────────────────────────────────────
+// ââ Use cases ââââââââââââââââââââââââââââââââââââââââââââââââââ
 const USE_CASES = [
-  { emoji: '🎵', text: 'When this song came out' },
-  { emoji: '🏈', text: 'Who wins the game' },
-  { emoji: '📏', text: "Who's actually taller" },
-  { emoji: '🍕', text: 'Last slice goes to who' },
-  { emoji: '🎬', text: 'What movie that actor was in' },
-  { emoji: '⏱️', text: 'How long this drive takes' },
-  { emoji: '🌡️', text: 'What the temp is right now' },
-  { emoji: '💸', text: 'Who pays for dinner' },
-  { emoji: '🎮', text: 'Next game winner' },
-  { emoji: '🤌', text: 'Literally anything' },
+  { emoji: 'ðµ', text: 'When this song came out' },
+  { emoji: 'ð', text: 'Who wins the game' },
+  { emoji: 'ð', text: "Who's actually taller" },
+  { emoji: 'ð', text: 'Last slice goes to who' },
+  { emoji: 'ð¬', text: 'What movie that actor was in' },
+  { emoji: 'â±ï¸', text: 'How long this drive takes' },
+  { emoji: 'ð¡ï¸', text: 'What the temp is right now' },
+  { emoji: 'ð¸', text: 'Who pays for dinner' },
+  { emoji: 'ð®', text: 'Next game winner' },
+  { emoji: 'ð¤', text: 'Literally anything' },
 ]
 
-// ── Side padding helper ────────────────────────────────────────
+// ââ Side padding helper ââââââââââââââââââââââââââââââââââââââââ
 const P = 'clamp(20px, 5vw, 60px)'
 
-// ─────────────────────────────────────────────────────────────
+// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 export default function Landing() {
   const navigate = useNavigate()
   const { session } = useAuth()
@@ -118,8 +118,8 @@ export default function Landing() {
   const [cursorBig, setCursorBig] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  const [step, setStep] = useState('phone') // 'phone' | 'otp'
-  const [phone, setPhone] = useState('')
+  const [step, setStep] = useState('email') // 'email' | 'otp' | 'sent'
+  const [email, setEmail] = useState('')
   const [otp, setOtp] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -145,25 +145,20 @@ export default function Landing() {
   }, [])
 
   function scrollToAuth() {
-    setStep('phone'); setError('')
+    setStep('email'); setError('')
     setTimeout(() => authRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50)
-  }
-
-  function formatPhone(raw) {
-    const d = raw.replace(/\D/g, '')
-    if (d.length === 10) return `+1${d}`
-    if (d.startsWith('1') && d.length === 11) return `+${d}`
-    return `+${d}`
   }
 
   async function sendOtp(e) {
     e.preventDefault()
     setError(''); setLoading(true)
     try {
-      const formatted = formatPhone(phone)
-      const { error } = await supabase.auth.signInWithOtp({ phone: formatted })
+      const { error } = await supabase.auth.signInWithOtp({
+        email: email.trim(),
+        options: { emailRedirectTo: window.location.origin },
+      })
       if (error) throw error
-      setPhone(formatted); setStep('otp')
+      setStep('otp')
     } catch (err) { setError(err.message || 'Failed to send code.') }
     finally { setLoading(false) }
   }
@@ -172,7 +167,7 @@ export default function Landing() {
     e.preventDefault()
     setError(''); setLoading(true)
     try {
-      const { error } = await supabase.auth.verifyOtp({ phone, token: otp.trim(), type: 'sms' })
+      const { error } = await supabase.auth.verifyOtp({ email: email.trim(), token: otp.trim(), type: 'email' })
       if (error) throw error
     } catch (err) { setError(err.message || 'Invalid code.'); setLoading(false) }
   }
@@ -195,7 +190,7 @@ export default function Landing() {
   return (
     <div style={{ minHeight: '100vh', overflowX: 'hidden', background: '#0a0a0a', color: '#f5f4f0', cursor: 'none' }}>
 
-      {/* ── Custom cursor ── */}
+      {/* ââ Custom cursor ââ */}
       <div style={{
         position: 'fixed', pointerEvents: 'none', zIndex: 9999,
         left: cursor.x, top: cursor.y,
@@ -207,14 +202,14 @@ export default function Landing() {
         mixBlendMode: 'difference',
       }} />
 
-      {/* ── Noise overlay ── */}
+      {/* ââ Noise overlay ââ */}
       <div style={{
         position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 1000,
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,
         opacity: 0.4,
       }} />
 
-      {/* ── NAV ── */}
+      {/* ââ NAV ââ */}
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         padding: `20px ${P}`,
@@ -241,7 +236,7 @@ export default function Landing() {
         </button>
       </nav>
 
-      {/* ── HERO ── */}
+      {/* ââ HERO ââ */}
       <section style={{
         minHeight: '100vh', display: 'flex', flexDirection: 'column',
         justifyContent: 'center', padding: `120px ${P} 80px`,
@@ -306,7 +301,7 @@ export default function Landing() {
                 transition: 'transform 0.15s ease, box-shadow 0.15s ease',
               }}
             >
-              Start Settling →
+              Start Settling â
             </button>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 13, color: '#888' }}>
               Already <span style={{ color: '#c8ff00', fontWeight: 500 }}>247+</span> settlers
@@ -315,10 +310,10 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ── TICKER ── */}
+      {/* ââ TICKER ââ */}
       <Ticker />
 
-      {/* ── DEMO ── */}
+      {/* ââ DEMO ââ */}
       <section style={{ padding: `80px ${P}` }}>
         <div ref={demoRef} style={{
           opacity: demoVis ? 1 : 0, transform: demoVis ? 'translateY(0)' : 'translateY(30px)',
@@ -333,7 +328,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ── */}
+      {/* ââ HOW IT WORKS ââ */}
       <section style={{ padding: `80px ${P}`, borderTop: '1px solid #1a1a1a' }}>
         <div ref={stepsRef}>
           <div style={{
@@ -353,7 +348,7 @@ export default function Landing() {
               { num: '01', title: 'Say the bet', desc: "Type out the bet in plain English. Anything. Sports, trivia, who's taller, who eats it first." },
               { num: '02', title: 'Both confirm', desc: "Your friend gets a notification. They tap accept. Now it's official. No take-backs." },
               { num: '03', title: 'Settle up', desc: "When it's done, one of you calls it. The loser gets notified. Your record updates. Receipts forever." },
-              { num: '04', title: 'Pay up', desc: 'Winner requests payment via Venmo or CashApp — directly from the app.' },
+              { num: '04', title: 'Pay up', desc: 'Winner requests payment via Venmo or CashApp â directly from the app.' },
             ].map((s, i) => (
               <div key={s.num}
                 onMouseEnter={e => { e.currentTarget.style.background = '#222'; e.currentTarget.querySelector('.step-num').style.color = '#c8ff00' }}
@@ -373,7 +368,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ── USE CASES ── */}
+      {/* ââ USE CASES ââ */}
       <section style={{ padding: `80px ${P}`, borderTop: '1px solid #1a1a1a' }}>
         <div ref={usesRef}>
           <div style={{
@@ -404,7 +399,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ── AUTH (replaces waitlist) ── */}
+      {/* ââ AUTH (replaces waitlist) ââ */}
       <section
         ref={authRef}
         style={{
@@ -438,19 +433,19 @@ export default function Landing() {
           position: 'relative', zIndex: 2,
         }}>
           {step === 'otp'
-            ? `Code sent to ${phone}. Check your texts.`
-            : 'No passwords. Just your phone number. Be the first to make it official.'
+            ? `Check your email â we sent a 6-digit code to ${email}.`
+            : 'No passwords. Just your email. Free forever.'
           }
         </p>
 
         {/* Form */}
         <div style={{ maxWidth: 460, margin: '0 auto', position: 'relative', zIndex: 2 }}>
-          {step === 'phone' ? (
+          {step === 'email' ? (
             <form onSubmit={sendOtp} style={{ display: 'flex', gap: 10, flexWrap: 'wrap', justifyContent: 'center' }}>
               <input
-                type="tel" placeholder="+1 (555) 000-0000"
-                value={phone} onChange={e => setPhone(e.target.value)}
-                required inputMode="tel"
+                type="email" placeholder="your@email.com"
+                value={email} onChange={e => setEmail(e.target.value)}
+                required autoFocus
                 style={{
                   flex: 1, minWidth: 220,
                   background: '#1a1a1a', border: '1px solid #333', color: '#f5f4f0',
@@ -461,17 +456,17 @@ export default function Landing() {
                 onFocus={e => e.currentTarget.style.borderColor = '#c8ff00'}
                 onBlur={e => e.currentTarget.style.borderColor = '#333'}
               />
-              <button type="submit" disabled={loading || !phone.trim()}
+              <button type="submit" disabled={loading || !email.trim()}
                 onMouseEnter={e => { setCursorBig(true); if (!loading) { e.currentTarget.style.transform = 'scale(1.04)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(200,255,0,0.3)' } }}
                 onMouseLeave={e => { setCursorBig(false); e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none' }}
                 style={{
                   background: '#c8ff00', color: '#0a0a0a', fontWeight: 700, fontSize: 15,
                   padding: '16px 28px', borderRadius: 100, border: 'none',
                   cursor: loading ? 'default' : 'none', whiteSpace: 'nowrap',
-                  opacity: loading || !phone.trim() ? 0.6 : 1, transition: 'all 0.2s',
+                  opacity: loading || !email.trim() ? 0.6 : 1, transition: 'all 0.2s',
                 }}
               >
-                {loading ? '...' : "I'm In →"}
+                {loading ? '...' : "I'm In â"}
               </button>
             </form>
           ) : (
@@ -501,13 +496,13 @@ export default function Landing() {
                     opacity: loading || otp.length < 6 ? 0.6 : 1, transition: 'all 0.2s',
                   }}
                 >
-                  {loading ? '...' : 'Verify →'}
+                  {loading ? '...' : 'Verify â'}
                 </button>
               </div>
-              <button type="button" onClick={() => { setStep('phone'); setOtp(''); setError('') }}
+              <button type="button" onClick={() => { setStep('email'); setOtp(''); setError('') }}
                 onMouseEnter={() => setCursorBig(true)} onMouseLeave={() => setCursorBig(false)}
                 style={{ background: 'none', border: 'none', color: '#888', fontSize: 13, cursor: 'none' }}>
-                ← Change number
+                â Change email
               </button>
             </form>
           )}
@@ -524,7 +519,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
+      {/* ââ FOOTER ââ */}
       <footer style={{
         padding: `40px ${P}`, borderTop: '1px solid #1a1a1a',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
@@ -533,7 +528,7 @@ export default function Landing() {
         <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, letterSpacing: 3 }}>
           SETTLE<span style={{ color: '#c8ff00' }}>.</span>
         </div>
-        <p style={{ fontSize: 13, color: '#888', fontFamily: "'DM Mono', monospace" }}>© 2026 Settle — Make It Official</p>
+        <p style={{ fontSize: 13, color: '#888', fontFamily: "'DM Mono', monospace" }}>Â© 2026 Settle â Make It Official</p>
       </footer>
 
     </div>
