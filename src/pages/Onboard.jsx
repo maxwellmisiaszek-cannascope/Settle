@@ -29,7 +29,7 @@ export default function Onboard() {
         })
       if (error) throw error
       await refreshProfile()
-      navigate('/', { replace: true })
+      navigate('/feed', { replace: true })
     } catch (err) {
       setError(err.message || 'Something went wrong.')
       setLoading(false)
