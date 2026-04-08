@@ -40,8 +40,21 @@ export function AuthProvider({ children }) {
         .eq('id', userId)
         .single()
 
-      if (error && error.code !== 'PGRST116') throw error
-      setProfile(data)
+      if (error && error.code === 'PGRST116') {
+        // Profile missing — create it now (trigger may have failed)
+        const { data: { user } } = await supabase.auth.getUser()
+        const { data: created, error: createErr } = await supabase
+          .from('profiles')
+          .upsert({ id: userId, phone: user?.phone ?? null }, { onConflict: 'id' })
+          .select('*')
+          .single()
+        if (createErr) console.error('Error creating profile:', createErr)
+        setProfile(created ?? null)
+      } else if (error) {
+        throw error
+      } else {
+        setProfile(data)
+      }
     } catch (err) {
       console.error('Error fetching profile:', err)
     } finally {
